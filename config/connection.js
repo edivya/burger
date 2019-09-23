@@ -1,18 +1,13 @@
 // Create connection between Node and MySQL
 var mysql = require("mysql");
-require("dotenv").config();
-var connection;
-if(process.env.JAWSDB_URL) {
-connection = mysql.createConnection(process.env.JAWSDB_URL);
-} else {
-    connection = mysql.createConnection({
-        host: "localhost",
-        port: 3306,
-        user: process.env.SQL_USER,
-        password: process.env.SQL_PASSWORD,
-        database: process.env.SQL_DATABASE
-    });
-}
+
+var connection = mysql.createConnection({
+    host: "localhost",
+    port: 3306,
+    user: "root",
+    password: "123456",
+    database: "burgers_db"
+  });
 
 
 // Establish the connection
